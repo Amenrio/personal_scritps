@@ -1,0 +1,12 @@
+import os
+import subprocess
+
+MAYA_PATH = "C:/Program Files/Autodesk/Maya2023/bin/maya.exe"
+
+maya_args = [MAYA_PATH]
+
+env = os.environ.copy()
+
+env["MAYA_APP_DIR"] = "C:/Users/Amenrio/Documents/maya_dev"
+
+subprocess.Popen(maya_args, env=env)
