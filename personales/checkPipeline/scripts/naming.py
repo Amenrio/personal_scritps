@@ -1,13 +1,7 @@
-# MRA script para comprobar Naming de ANIMACION 2
-
 import maya.cmds as cmds
-import MRA_library_variableNames_v02 as VARS  # Libreria de variables
+import library_naming as VARS  # Libreria de variables
 
 
-# Listas globales
-
-
-# Filtra el namespace (en caso de existir) y divide el nombre del objeto (en los " _ ") en un array de 3 partes, node_type_flag_name
 def get_nice_name(name_obj):
     if (name_obj.find(':')) > 0:
         obj = name_obj.split(':')
@@ -18,57 +12,74 @@ def get_nice_name(name_obj):
         parts_obj = name_obj.split("_")
         return parts_obj
 
-# Detecta errores en el naming pipeline, devuelve 0 si detecta algun error
-
 
 def check_naming(name_obj):
-    if (name_obj.find(":")) > 0:             #
-        obj = name_obj.split(":")            # Detecta Namespace en el objeto
-        LE_NAMESPACES.append(name_obj)       #
+    """Comprueba el nombre del objeto por si hay la presencia de Namespaces, nombres duplicados, o no tienen '_'
+    Anade los nodos que no cumplan el naming a las listas globales de errores
 
-        if(obj[1].find("_")) < 0:           #
-            # Analiza si es correcto el nombre fuera del namespace
+    Args:
+        name_obj (maya node): Nodo DAG de la escena de maya
+    """
+
+    if (name_obj.find(":")) > 0:
+        obj = name_obj.split(":")
+        LE_NAMESPACES.append(name_obj)
+
+        if (obj[1].find("_")) < 0:
             LE_NAMING.append(obj[1])
 
     elif (name_obj.find("|")) > 0:
         obj = name_obj.split("|")
-        if(obj[1].find("_")) < 0:
+        if (obj[1].find("_")) < 0:
             LE_NAMING.append(name_obj)
     else:
-        if(name_obj.find("_")) < 0:
-            LE_NAMING.append(name_obj)  # Comprueba si es correcto el nombre
+        if (name_obj.find("_")) < 0:
+            LE_NAMING.append(name_obj)
 
 
-# Comprueba si existen nombres duplicados, devuelve 0 si detecta algun error
 def check_duplicates(name_obj):
-    if(name_obj.find("|")) > 0:
+    """Comprueba si existe en el nombre del objeto el character ' | ', lo que indicaria que es un nodo con nombre duplicado.
+    Anade a la lista LE_DUPLICATED los nodos con error
+
+    Args:
+        name_obj (maya node): Nodo DAG de la escena de maya
+    """
+    if (name_obj.find("|")) > 0:
         LE_DUPLICATED.append(name_obj)
 
 
-# Compara con dos diccionarios si las dos primeras partes del objeto cumplen el naming (naming_maya y location_flags), si no lo cumplen, se anaden a las listas de errores
-
 def check_syntax(name_obj):
+    """Divide el nombre del objeto en un array de 3 elementos.
+    Comprueba si el nombre del objeto contiene mas ' _ ' de lo establecido por el pipeline,
+    Comprueba comparando con la libreria de naming Si el primer elemento del array coincide con lo establecido por el pipeline.
+    Comprueba si el segundo elemento coincide con las location flags establecidas por el pipeline
+
+    Args:
+        name_obj (maya node): Name of the DAG node in maya
+    """
     obj = get_nice_name(name_obj)
     if len(obj) > 3 or len(obj) < 2:
         LE_WARNINGS.append(name_obj)
     else:
-        # si obj[0] existe dentro de los valores del diccionario namingMaya
         if obj[0] not in VARS.naming_maya.values():
             LE_WARNINGS.append(name_obj)
 
-        # si obj[1] existe dentro de los valores del diccionario locationFlags
         elif obj[1] not in VARS.location_flags.values():
 
             LE_WARNINGS.append(name_obj)
 
 
-
-# Codigo principal
 def check_naming_pipeline(*args):
-    global LE_NAMESPACES  # Lista de Namespaces
-    global LE_NAMING  # Lista de errores por Naming
-    global LE_DUPLICATED  # Lista de elementos con nombres duplicados
-    global LE_WARNINGS  # Lista de elementos de warnings de, ejemplo, sintaxis o flags
+    """Crea las listas de errores globales, selecciona todos los nodos de la escena
+    Llama a las diferentes funciones check_naming, check_duplicates y check_syntax.
+    Llama a la funcion que crea la ventana y envia las listas de errores.
+
+    """
+
+    global LE_NAMESPACES
+    global LE_NAMING
+    global LE_DUPLICATED
+    global LE_WARNINGS
     LE_NAMESPACES = []
     LE_NAMING = []
     LE_DUPLICATED = []
@@ -91,6 +102,14 @@ def check_naming_pipeline(*args):
 
 
 def naming_pipeline_ui(error_list, namespace_list, duplicated_list, warning_list):
+    """Crea la ventana donde aparecen la lista de errores de maya, si no hay, sale un mensaje en verde
+
+    Args:
+        error_list (list): Lista de errores general
+        namespace_list (list): Lista de errores de namespace
+        duplicated_list (list): Lista de errores duplicados
+        warning_list (list): Lista de errores de sintaxis
+    """
     window_name = "naming_pipeline_ui"
     window_title = "MRA Naming Pipeline"
     window_w = 275
@@ -125,10 +144,11 @@ def naming_pipeline_ui(error_list, namespace_list, duplicated_list, warning_list
 
     if len(warning_list) > 0:
         cmds.frameLayout("Posibles fallos u objetos mal escritos: {0} ".format(
-            len(warning_list)), p=layout, bgc=[0.068,0.068,0.068])
+            len(warning_list)), p=layout, bgc=[0.068, 0.068, 0.068])
         for k in warning_list:
             command = "cmds.select('{0}')".format(k)
-            cmds.button(label="  {}  ".format(k), bgc=[0.125,0.125,0.125], c=command)
+            cmds.button(label="  {}  ".format(k), bgc=[
+                        0.125, 0.125, 0.125], c=command)
 
         cmds.separator(style='none', height=10, p=layout)
 

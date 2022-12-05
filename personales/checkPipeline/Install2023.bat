@@ -1,11 +1,11 @@
 @echo off
 ECHO Instalando CheckPipeline en Maya2023
-set MAYA_SCR_DIR="%HOMEDRIVE%%HOMEPATH%/Documents/maya/2023/prefs/scripts"
+set MAYA_SCR_DIR="%HOMEDRIVE%%HOMEPATH%/Documents/maya/2022/prefs/scripts"
 
-set MAYA_SHE_DIR="%HOMEDRIVE%%HOMEPATH%/Documents/maya/2023/prefs/shelves"
+set MAYA_SHE_DIR="%HOMEDRIVE%%HOMEPATH%/Documents/maya/2022/prefs/shelves"
 
 if exist %MAYA_SCR_DIR% (
-    cd CheckPipeline
+    cd scripts
     xcopy *.py %MAYA_SCR_DIR%
     echo Scripts intsalados
 )else (

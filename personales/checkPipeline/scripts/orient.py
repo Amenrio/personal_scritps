@@ -1,10 +1,10 @@
 import maya.cmds as cmds
-import MRA_scr_rig_checkPipeline_v02 as CP
-import MRA_namingPipeline_v02 as NMP
-import MRA_library_variableNames_v02 as VARS
 
 
 def checkOrient(*args):
+
+    """Comprueba los objetos seleccionados (O el grupo grp_x_rig si no hay nada seleccionado) y analiza el valor de JointOrient
+    """
     listMistakes = []
 
     selection = cmds.ls(selection=True, dag=True, transforms=True)
@@ -31,7 +31,12 @@ def checkOrient(*args):
     # print(listMistakes)
 
 
-def MRA_OPUI(object):
+def MRA_OPUI(error_list):
+    """Crea la ventana de errores de orient
+
+    Args:
+        error_list (list): Lista de joints con Orient =! a 0,0,0
+    """
 
     if cmds.window('MRA_OPUI', exists=True):
         cmds.deleteUI('MRA_OPUI')
@@ -48,8 +53,8 @@ def MRA_OPUI(object):
     cmds.separator(style='none', height=5)
     cmds.text("Lista de Joints")
     cmds.separator(style='none', height=5)
-    if len(object) > 0:
-        for o in object:
+    if len(error_list) > 0:
+        for o in error_list:
             command = "cmds.select('{}')".format(o)
 
             cmds.button(label="{0}".format(o), c=command, bgc=[0.65, 0.3, 0.3])

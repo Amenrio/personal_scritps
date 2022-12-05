@@ -1,12 +1,14 @@
 #CheckPipeline ANIM2 CDAV
 #MRA script para comprobar Pipeline de ANIMACION 2 CDAV
-import MRA_library_variableNames_v02 as VARS  # Libreria de variables
-import MRA_orientPipeline_v02 as ORP
-import MRA_namingPipeline_v02 as NMP
+import library_naming as VARS  # Libreria de variables
+import orient
+import naming
 import maya.cmds as cmds
 
 
-def MRA_checkPipeline():
+def check_pipeline():
+    """Creates main window of the script
+    """
     #print messageErrorRigPipe
     window_name = "MRA_checkPipeline"
     window_title = "MRA Check Pipeline"
@@ -28,7 +30,7 @@ def MRA_checkPipeline():
               font="boldLabelFont")
     cmds.separator(style='none', height=10)
     cmds.button(label="Check Orient Pipeline", h=40,
-                c=ORP.checkOrient, bgc=[0.682, 0.616, 0.851])
+                c=orient.checkOrient, bgc=[0.682, 0.616, 0.851])
 
     cmds.separator(style='none', height=10)
     cmds.text("Pipeline Animacion", align="center",
@@ -36,7 +38,7 @@ def MRA_checkPipeline():
               font="boldLabelFont")
     cmds.separator(style='none', height=10)
     cmds.button(label="Check Naming Pipeline", h=40,
-                c=NMP.check_naming_pipeline, bgc=[0.682, 0.616, 0.851])
+                c=naming.check_naming_pipeline, bgc=[0.682, 0.616, 0.851])
     cmds.separator(style='none', height=10)
 
     cmds.showWindow(window)

@@ -22,16 +22,7 @@ def get_nice_name(name_obj):
 ###  ID Propio
 
 proyect_id ={
-    "proyecto": "MDR",
     "Andres":"MRA",
-    "Sara":"CFS",
-    "Xela":"GCX",
-    "Jennifer":"AMJ",
-    "Amaya":"VPA",
-    "Diego":"CTD",
-    "David":"PMD",
-    "Javier":"DJJ",
-    "Guillem":"FRG",
     "plantilla": "XXX"
 }
 
