@@ -122,6 +122,7 @@ separator = "_"
 
 
 naming_maya = {
+    """Maya Nodes Naming Convention"""
     "geometry": "geo",
     "group": "grp",
     "control": "ctl",
@@ -151,6 +152,7 @@ naming_maya = {
 
 
 location_flags = {
+"""Node location flags"""
     "irrelevant": "x",
     "center": "c",
     "left": "l",
