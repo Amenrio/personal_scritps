@@ -1,4 +1,8 @@
-#Libreria de variables naming
+"""
+This module has the dictionaries that all scripts use for naming convention
+
+"""
+
 def get_nice_name_shapes(name_obj):
     if (name_obj.find(':')) > 0:
         obj = name_obj.split(':')
@@ -18,7 +22,7 @@ def get_nice_name(name_obj):
     else:
         parts_obj = name_obj.split("_")
         return parts_obj
-    
+
 ###  ID Propio
 
 proyect_id ={

@@ -1,3 +1,7 @@
+"""
+This module checks if joints have values in their JointOrient attribute
+"""
+
 import maya.cmds as cmds
 
 

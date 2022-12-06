@@ -1,3 +1,9 @@
+"""
+This Module has the functions to check if nodes in maya correctly use a naming convention
+
+"""
+
+
 import maya.cmds as cmds
 import library_naming as VARS  # Libreria de variables
 

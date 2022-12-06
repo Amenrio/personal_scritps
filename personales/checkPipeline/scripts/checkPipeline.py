@@ -1,5 +1,7 @@
-#CheckPipeline ANIM2 CDAV
-#MRA script para comprobar Pipeline de ANIMACION 2 CDAV
+"""
+This module creates the main window for the check pipeline script by Andres Mendez, for the class Animacion 2
+
+"""
 import library_naming as VARS  # Libreria de variables
 import orient
 import naming
