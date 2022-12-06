@@ -33,7 +33,7 @@ global proc shelf_MRA () {
         -style "iconOnly" 
         -marginWidth 0
         -marginHeight 1
-        -command "import checkPipeline as CP\nCP.check_pipeline()" 
+        -command "import main_window as CP\nCP.check_pipeline()" 
         -sourceType "python" 
         -commandRepeatable 1
         -flat 1
