@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'CPL'
+project = 'Check Pipeline'
 copyright = '2022, Amenrio'
 author = 'Amenrio'
 release = 'v0.1'
@@ -33,5 +33,5 @@ sys.path.append("docs/sphinx/fake_modules") # Find a fake maya module in gitHub 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'furo'
 html_static_path = ['_static']

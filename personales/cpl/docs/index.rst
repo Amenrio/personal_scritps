@@ -6,11 +6,12 @@
 Welcome to CPL's documentation!
 ===============================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+.. autosummary::
+   :toctree: _autosumary
+   :template: custom-module-template.rst
+   :recursive:
 
-   modules
+   cpl
 
 Indices and tables
 ==================

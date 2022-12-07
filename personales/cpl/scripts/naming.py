@@ -23,7 +23,7 @@ def check_naming(name_obj):
     Anade los nodos que no cumplan el naming a las listas globales de errores
 
     Args:
-        name_obj (maya node): Nodo DAG de la escena de maya
+        :param name_obj (maya node): Nodo DAG de la escena de maya
     """
 
     if (name_obj.find(":")) > 0:
