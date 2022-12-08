@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Check Pipeline Tool &#8212; Personal Scripts 1.0.0 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Personal Scripts’s documentation!" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Personal Scripts 1.0.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Check Pipeline Tool
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/modules.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.mainWindow">
+   Main Window
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.orient">
+   Orient functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.naming">
+   Naming functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.libraryNaming">
+   Library Naming
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Check Pipeline Tool</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.mainWindow">
+   Main Window
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.orient">
+   Orient functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.naming">
+   Naming functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-cpl.scripts.libraryNaming">
+   Library Naming
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="check-pipeline-tool">
+<h1>Check Pipeline Tool<a class="headerlink" href="#check-pipeline-tool" title="Permalink to this headline">#</a></h1>
+<p><em>Multiple Maya Tools developed by Amenrio</em></p>
+<section id="module-cpl.scripts.mainWindow">
+<span id="main-window"></span><h2>Main Window<a class="headerlink" href="#module-cpl.scripts.mainWindow" title="Permalink to this headline">#</a></h2>
+<p>This module creates the main window for the check pipeline script by Andres Mendez, for the class Animacion 2</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.mainWindow.check_pipeline">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.mainWindow.</span></span><span class="sig-name descname"><span class="pre">check_pipeline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/mainWindow.html#check_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.mainWindow.check_pipeline" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates main window of the script</p>
+</dd></dl>
+
+</section>
+<section id="module-cpl.scripts.orient">
+<span id="orient-functions"></span><h2>Orient functions<a class="headerlink" href="#module-cpl.scripts.orient" title="Permalink to this headline">#</a></h2>
+<p>This module checks if joints have values in their JointOrient attribute</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.orient.MRA_OPUI">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.orient.</span></span><span class="sig-name descname"><span class="pre">MRA_OPUI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/orient.html#MRA_OPUI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.orient.MRA_OPUI" title="Permalink to this definition">#</a></dt>
+<dd><p>Crea la ventana de errores de orient</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>error_list (list): Lista de joints con Orient =! a 0,0,0</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.orient.checkOrient">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.orient.</span></span><span class="sig-name descname"><span class="pre">checkOrient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/orient.html#checkOrient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.orient.checkOrient" title="Permalink to this definition">#</a></dt>
+<dd><p>Comprueba los objetos seleccionados (O el grupo grp_x_rig si no hay nada seleccionado) y analiza el valor de JointOrient</p>
+</dd></dl>
+
+</section>
+<section id="module-cpl.scripts.naming">
+<span id="naming-functions"></span><h2>Naming functions<a class="headerlink" href="#module-cpl.scripts.naming" title="Permalink to this headline">#</a></h2>
+<p>This Module has the functions to check if nodes in maya correctly use a naming convention</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.naming.check_duplicates">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.naming.</span></span><span class="sig-name descname"><span class="pre">check_duplicates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/naming.html#check_duplicates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.naming.check_duplicates" title="Permalink to this definition">#</a></dt>
+<dd><p>Comprueba si existe en el nombre del objeto el character ‘ | ‘, lo que indicaria que es un nodo con nombre duplicado.
+Anade a la lista LE_DUPLICATED los nodos con error</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name_obj (maya node): Nodo DAG de la escena de maya</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.naming.check_naming">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.naming.</span></span><span class="sig-name descname"><span class="pre">check_naming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/naming.html#check_naming"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.naming.check_naming" title="Permalink to this definition">#</a></dt>
+<dd><p>Comprueba el nombre del objeto por si hay la presencia de Namespaces, nombres duplicados, o no tienen ‘_’
+Anade los nodos que no cumplan el naming a las listas globales de errores</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">param name_obj (maya node)</dt>
+<dd class="field-odd"><p>Nodo DAG de la escena de maya</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.naming.check_naming_pipeline">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.naming.</span></span><span class="sig-name descname"><span class="pre">check_naming_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/naming.html#check_naming_pipeline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.naming.check_naming_pipeline" title="Permalink to this definition">#</a></dt>
+<dd><p>Crea las listas de errores globales, selecciona todos los nodos de la escena
+Llama a las diferentes funciones check_naming, check_duplicates y check_syntax.
+Llama a la funcion que crea la ventana y envia las listas de errores.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.naming.check_syntax">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.naming.</span></span><span class="sig-name descname"><span class="pre">check_syntax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/naming.html#check_syntax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.naming.check_syntax" title="Permalink to this definition">#</a></dt>
+<dd><p>Divide el nombre del objeto en un array de 3 elementos.
+Comprueba si el nombre del objeto contiene mas ‘ _ ‘ de lo establecido por el pipeline,
+Comprueba comparando con la libreria de naming Si el primer elemento del array coincide con lo establecido por el pipeline.
+Comprueba si el segundo elemento coincide con las location flags establecidas por el pipeline</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name_obj (maya node): Name of the DAG node in maya</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cpl.scripts.naming.naming_pipeline_ui">
+<span class="sig-prename descclassname"><span class="pre">cpl.scripts.naming.</span></span><span class="sig-name descname"><span class="pre">naming_pipeline_ui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespace_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicated_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cpl/scripts/naming.html#naming_pipeline_ui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cpl.scripts.naming.naming_pipeline_ui" title="Permalink to this definition">#</a></dt>
+<dd><p>Crea la ventana donde aparecen la lista de errores de maya, si no hay, sale un mensaje en verde</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>error_list (list): Lista de errores general
+namespace_list (list): Lista de errores de namespace
+duplicated_list (list): Lista de errores duplicados
+warning_list (list): Lista de errores de sintaxis</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-cpl.scripts.libraryNaming">
+<span id="library-naming"></span><h2>Library Naming<a class="headerlink" href="#module-cpl.scripts.libraryNaming" title="Permalink to this headline">#</a></h2>
+<p>This module has the dictionaries that all scripts use for naming convention</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1">#</span>
+<span class="linenos">  2</span><span class="c1"># ID Propio</span>
+<span class="linenos">  3</span><span class="c1">#</span>
+<span class="linenos">  4</span><span class="n">proyect_id</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">  5</span>    <span class="sd">&quot;&quot;&quot;_summary_</span>
+<span class="linenos">  6</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">  7</span>    <span class="s2">&quot;Andres&quot;</span><span class="p">:</span> <span class="s2">&quot;MRA&quot;</span><span class="p">,</span>
+<span class="linenos">  8</span>    <span class="s2">&quot;plantilla&quot;</span><span class="p">:</span> <span class="s2">&quot;XXX&quot;</span>
+<span class="linenos">  9</span><span class="p">}</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span><span class="c1">###</span>
+<span class="linenos"> 12</span><span class="c1"># Ejercicio ID</span>
+<span class="linenos"> 13</span><span class="c1">###</span>
+<span class="linenos"> 14</span><span class="n">task_id</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 15</span>    <span class="s2">&quot;script&quot;</span><span class="p">:</span> <span class="s2">&quot;scr&quot;</span><span class="p">,</span>
+<span class="linenos"> 16</span>    <span class="s2">&quot;story&quot;</span><span class="p">:</span> <span class="s2">&quot;str&quot;</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="s2">&quot;animatic&quot;</span><span class="p">:</span> <span class="s2">&quot;anmtc&quot;</span><span class="p">,</span>
+<span class="linenos"> 18</span>    <span class="s2">&quot;colorKeys&quot;</span><span class="p">:</span> <span class="s2">&quot;ck&quot;</span><span class="p">,</span>
+<span class="linenos"> 19</span>    <span class="s2">&quot;layout&quot;</span><span class="p">:</span> <span class="s2">&quot;layout&quot;</span><span class="p">,</span>
+<span class="linenos"> 20</span>    <span class="s2">&quot;animation&quot;</span><span class="p">:</span> <span class="s2">&quot;anim&quot;</span><span class="p">,</span>
+<span class="linenos"> 21</span>    <span class="s2">&quot;cache&quot;</span><span class="p">:</span> <span class="s2">&quot;cache&quot;</span><span class="p">,</span>
+<span class="linenos"> 22</span>    <span class="s2">&quot;FX&quot;</span><span class="p">:</span> <span class="s2">&quot;fx&quot;</span><span class="p">,</span>
+<span class="linenos"> 23</span>    <span class="s2">&quot;lightning&quot;</span><span class="p">:</span> <span class="s2">&quot;lg&quot;</span><span class="p">,</span>
+<span class="linenos"> 24</span>    <span class="s2">&quot;compositing&quot;</span><span class="p">:</span> <span class="s2">&quot;comp&quot;</span><span class="p">,</span>
+<span class="linenos"> 25</span>    <span class="s2">&quot;rendering&quot;</span><span class="p">:</span> <span class="s2">&quot;rdrng&quot;</span>
+<span class="linenos"> 26</span><span class="p">}</span>
+<span class="linenos"> 27</span>
+<span class="linenos"> 28</span><span class="c1">###</span>
+<span class="linenos"> 29</span><span class="c1"># Sound Type</span>
+<span class="linenos"> 30</span><span class="c1">###</span>
+<span class="linenos"> 31</span>
+<span class="linenos"> 32</span><span class="n">sound_type</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 33</span>    <span class="s2">&quot;voices&quot;</span><span class="p">:</span> <span class="s2">&quot;voice&quot;</span><span class="p">,</span>
+<span class="linenos"> 34</span>    <span class="s2">&quot;soundFx&quot;</span><span class="p">:</span> <span class="s2">&quot;sfx&quot;</span><span class="p">,</span>
+<span class="linenos"> 35</span>    <span class="s2">&quot;ambients&quot;</span><span class="p">:</span> <span class="s2">&quot;samb&quot;</span><span class="p">,</span>
+<span class="linenos"> 36</span>    <span class="s2">&quot;music&quot;</span><span class="p">:</span> <span class="s2">&quot;strk&quot;</span>
+<span class="linenos"> 37</span><span class="p">}</span>
+<span class="linenos"> 38</span>
+<span class="linenos"> 39</span><span class="c1">###</span>
+<span class="linenos"> 40</span><span class="c1"># Asset Type</span>
+<span class="linenos"> 41</span><span class="c1">###</span>
+<span class="linenos"> 42</span><span class="n">asset_type</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 43</span>    <span class="s2">&quot;character&quot;</span><span class="p">:</span> <span class="s2">&quot;ch&quot;</span><span class="p">,</span>
+<span class="linenos"> 44</span>    <span class="s2">&quot;prop&quot;</span><span class="p">:</span> <span class="s2">&quot;pr&quot;</span><span class="p">,</span>
+<span class="linenos"> 45</span>    <span class="s2">&quot;set&quot;</span><span class="p">:</span> <span class="s2">&quot;st&quot;</span><span class="p">,</span>
+<span class="linenos"> 46</span>    <span class="s2">&quot;camera&quot;</span><span class="p">:</span> <span class="s2">&quot;cm&quot;</span><span class="p">,</span>
+<span class="linenos"> 47</span>    <span class="s2">&quot;effects&quot;</span><span class="p">:</span> <span class="s2">&quot;fx&quot;</span><span class="p">,</span>
+<span class="linenos"> 48</span>    <span class="s2">&quot;lights&quot;</span><span class="p">:</span> <span class="s2">&quot;lg&quot;</span><span class="p">,</span>
+<span class="linenos"> 49</span>    <span class="s2">&quot;addon&quot;</span><span class="p">:</span> <span class="s2">&quot;ad&quot;</span><span class="p">,</span>
+<span class="linenos"> 50</span>    <span class="s2">&quot;generic&quot;</span><span class="p">:</span> <span class="s2">&quot;gn&quot;</span><span class="p">,</span>
+<span class="linenos"> 51</span>    <span class="s2">&quot;library_character&quot;</span><span class="p">:</span> <span class="s2">&quot;lbch&quot;</span><span class="p">,</span>
+<span class="linenos"> 52</span>    <span class="s2">&quot;library_prop&quot;</span><span class="p">:</span> <span class="s2">&quot;lbpr&quot;</span><span class="p">,</span>
+<span class="linenos"> 53</span>    <span class="s2">&quot;library_set&quot;</span><span class="p">:</span> <span class="s2">&quot;lbst&quot;</span><span class="p">,</span>
+<span class="linenos"> 54</span>    <span class="s2">&quot;library_camera&quot;</span><span class="p">:</span> <span class="s2">&quot;lbcm&quot;</span><span class="p">,</span>
+<span class="linenos"> 55</span>    <span class="s2">&quot;library_effects&quot;</span><span class="p">:</span> <span class="s2">&quot;lbfx&quot;</span><span class="p">,</span>
+<span class="linenos"> 56</span>    <span class="s2">&quot;library_lights&quot;</span><span class="p">:</span> <span class="s2">&quot;lblg&quot;</span>
+<span class="linenos"> 57</span><span class="p">}</span>
+<span class="linenos"> 58</span>
+<span class="linenos"> 59</span><span class="c1">###</span>
+<span class="linenos"> 60</span><span class="c1"># Maya Task ID</span>
+<span class="linenos"> 61</span><span class="c1">###</span>
+<span class="linenos"> 62</span><span class="n">maya_task_id</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 63</span>    <span class="s2">&quot;modelado&quot;</span><span class="p">:</span> <span class="s2">&quot;mod&quot;</span><span class="p">,</span>
+<span class="linenos"> 64</span>    <span class="s2">&quot;lowPoly&quot;</span><span class="p">:</span> <span class="s2">&quot;modlp&quot;</span><span class="p">,</span>
+<span class="linenos"> 65</span>    <span class="s2">&quot;highPoly&quot;</span><span class="p">:</span> <span class="s2">&quot;modhp&quot;</span><span class="p">,</span>
+<span class="linenos"> 66</span>    <span class="s2">&quot;sculpting&quot;</span><span class="p">:</span> <span class="s2">&quot;modsc&quot;</span><span class="p">,</span>
+<span class="linenos"> 67</span>    <span class="s2">&quot;mod_blendshapes&quot;</span><span class="p">:</span> <span class="s2">&quot;modbs&quot;</span><span class="p">,</span>
+<span class="linenos"> 68</span>    <span class="s2">&quot;animRig&quot;</span><span class="p">:</span> <span class="s2">&quot;anim&quot;</span><span class="p">,</span>
+<span class="linenos"> 69</span>    <span class="s2">&quot;layoutRig&quot;</span><span class="p">:</span> <span class="s2">&quot;layout&quot;</span><span class="p">,</span>
+<span class="linenos"> 70</span>    <span class="s2">&quot;rig&quot;</span><span class="p">:</span> <span class="s2">&quot;rig&quot;</span><span class="p">,</span>
+<span class="linenos"> 71</span>    <span class="s2">&quot;cloth&quot;</span><span class="p">:</span> <span class="s2">&quot;cloth&quot;</span><span class="p">,</span>
+<span class="linenos"> 72</span>    <span class="s2">&quot;hair&quot;</span><span class="p">:</span> <span class="s2">&quot;hair&quot;</span><span class="p">,</span>
+<span class="linenos"> 73</span>    <span class="s2">&quot;shading&quot;</span><span class="p">:</span> <span class="s2">&quot;shd&quot;</span><span class="p">,</span>
+<span class="linenos"> 74</span>    <span class="s2">&quot;lookdev&quot;</span><span class="p">:</span> <span class="s2">&quot;lkdv&quot;</span><span class="p">,</span>
+<span class="linenos"> 75</span>    <span class="s2">&quot;assetLighting&quot;</span><span class="p">:</span> <span class="s2">&quot;lgt&quot;</span><span class="p">,</span>
+<span class="linenos"> 76</span>    <span class="s2">&quot;FX&quot;</span><span class="p">:</span> <span class="s2">&quot;fx&quot;</span><span class="p">,</span>
+<span class="linenos"> 77</span>    <span class="c1"># TaskIDshots</span>
+<span class="linenos"> 78</span>    <span class="s2">&quot;layout&quot;</span><span class="p">:</span> <span class="s2">&quot;layout&quot;</span><span class="p">,</span>
+<span class="linenos"> 79</span>    <span class="s2">&quot;blocking&quot;</span><span class="p">:</span> <span class="s2">&quot;ablk&quot;</span><span class="p">,</span>
+<span class="linenos"> 80</span>    <span class="s2">&quot;breakdowns&quot;</span><span class="p">:</span> <span class="s2">&quot;abrd&quot;</span><span class="p">,</span>
+<span class="linenos"> 81</span>    <span class="s2">&quot;refine&quot;</span><span class="p">:</span> <span class="s2">&quot;aref&quot;</span><span class="p">,</span>
+<span class="linenos"> 82</span>    <span class="s2">&quot;cache&quot;</span><span class="p">:</span> <span class="s2">&quot;cache&quot;</span><span class="p">,</span>
+<span class="linenos"> 83</span>    <span class="s2">&quot;special_effects&quot;</span><span class="p">:</span> <span class="s2">&quot;fx&quot;</span><span class="p">,</span>
+<span class="linenos"> 84</span>    <span class="s2">&quot;lightning&quot;</span><span class="p">:</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span>
+<span class="linenos"> 85</span>    <span class="s2">&quot;render&quot;</span><span class="p">:</span> <span class="s2">&quot;render&quot;</span><span class="p">,</span>
+<span class="linenos"> 86</span><span class="p">}</span>
+<span class="linenos"> 87</span><span class="c1">###</span>
+<span class="linenos"> 88</span><span class="c1"># Maya Scene Naming</span>
+<span class="linenos"> 89</span><span class="c1">###</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span>
+<span class="linenos"> 92</span><span class="n">separator</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span>
+<span class="linenos"> 93</span>
+<span class="linenos"> 94</span>
+<span class="linenos"> 95</span><span class="n">naming_maya</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 96</span>    <span class="sd">&quot;&quot;&quot;Maya Nodes Naming Convention&quot;&quot;&quot;</span>
+<span class="linenos"> 97</span>    <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="s2">&quot;geo&quot;</span><span class="p">,</span>
+<span class="linenos"> 98</span>    <span class="s2">&quot;group&quot;</span><span class="p">:</span> <span class="s2">&quot;grp&quot;</span><span class="p">,</span>
+<span class="linenos"> 99</span>    <span class="s2">&quot;control&quot;</span><span class="p">:</span> <span class="s2">&quot;ctl&quot;</span><span class="p">,</span>
+<span class="linenos">100</span>    <span class="s2">&quot;locator&quot;</span><span class="p">:</span> <span class="s2">&quot;lct&quot;</span><span class="p">,</span>
+<span class="linenos">101</span>    <span class="s2">&quot;spline&quot;</span><span class="p">:</span> <span class="s2">&quot;spl&quot;</span><span class="p">,</span>
+<span class="linenos">102</span>    <span class="s2">&quot;joint&quot;</span><span class="p">:</span> <span class="s2">&quot;jnt&quot;</span><span class="p">,</span>
+<span class="linenos">103</span>    <span class="s2">&quot;controlIK&quot;</span><span class="p">:</span> <span class="s2">&quot;cik&quot;</span><span class="p">,</span>
+<span class="linenos">104</span>    <span class="s2">&quot;controlFK&quot;</span><span class="p">:</span> <span class="s2">&quot;cfk&quot;</span><span class="p">,</span>
+<span class="linenos">105</span>    <span class="s2">&quot;cluster&quot;</span><span class="p">:</span> <span class="s2">&quot;cls&quot;</span><span class="p">,</span>
+<span class="linenos">106</span>    <span class="s2">&quot;jointMain&quot;</span><span class="p">:</span> <span class="s2">&quot;main&quot;</span><span class="p">,</span>
+<span class="linenos">107</span>    <span class="s2">&quot;jointSkin&quot;</span><span class="p">:</span> <span class="s2">&quot;skin&quot;</span><span class="p">,</span>
+<span class="linenos">108</span>    <span class="s2">&quot;light&quot;</span><span class="p">:</span> <span class="s2">&quot;lgt&quot;</span><span class="p">,</span>
+<span class="linenos">109</span>    <span class="s2">&quot;camera&quot;</span><span class="p">:</span> <span class="s2">&quot;cam&quot;</span><span class="p">,</span>
+<span class="linenos">110</span>    <span class="s2">&quot;imagePlane&quot;</span><span class="p">:</span> <span class="s2">&quot;imp&quot;</span><span class="p">,</span>
+<span class="linenos">111</span>    <span class="s2">&quot;orientConstraint&quot;</span><span class="p">:</span> <span class="s2">&quot;ons&quot;</span><span class="p">,</span>
+<span class="linenos">112</span>    <span class="s2">&quot;pointConstraint&quot;</span><span class="p">:</span> <span class="s2">&quot;pns&quot;</span><span class="p">,</span>
+<span class="linenos">113</span>    <span class="s2">&quot;aimConstraint&quot;</span><span class="p">:</span> <span class="s2">&quot;ans&quot;</span><span class="p">,</span>
+<span class="linenos">114</span>    <span class="s2">&quot;parentConstraint&quot;</span><span class="p">:</span> <span class="s2">&quot;pans&quot;</span><span class="p">,</span>
+<span class="linenos">115</span>    <span class="s2">&quot;scaleConstraint&quot;</span><span class="p">:</span> <span class="s2">&quot;sns&quot;</span><span class="p">,</span>
+<span class="linenos">116</span>    <span class="s2">&quot;ikHandle&quot;</span><span class="p">:</span> <span class="s2">&quot;ikh&quot;</span><span class="p">,</span>
+<span class="linenos">117</span>    <span class="s2">&quot;ikEffector&quot;</span><span class="p">:</span> <span class="s2">&quot;eft&quot;</span>
+<span class="linenos">118</span><span class="p">}</span>
+<span class="linenos">119</span>
+<span class="linenos">120</span><span class="c1">###</span>
+<span class="linenos">121</span><span class="c1"># Node Location Flag</span>
+<span class="linenos">122</span><span class="c1">###</span>
+<span class="linenos">123</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span><span class="n">location_flags</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">126</span>    <span class="sd">&quot;&quot;&quot;Node location flags&quot;&quot;&quot;</span>
+<span class="linenos">127</span>    <span class="s2">&quot;irrelevant&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+<span class="linenos">128</span>    <span class="s2">&quot;center&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+<span class="linenos">129</span>    <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="s2">&quot;l&quot;</span><span class="p">,</span>
+<span class="linenos">130</span>    <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span>
+<span class="linenos">131</span>    <span class="s2">&quot;front&quot;</span><span class="p">:</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span>
+<span class="linenos">132</span>    <span class="s2">&quot;back&quot;</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span>
+<span class="linenos">133</span>    <span class="s2">&quot;up&quot;</span><span class="p">:</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span>
+<span class="linenos">134</span>    <span class="s2">&quot;down&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span>
+<span class="linenos">135</span><span class="p">}</span>
+<span class="linenos">136</span>
+<span class="linenos">137</span>
+<span class="linenos">138</span><span class="n">pipeline_groups</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;geo&quot;</span><span class="p">,</span> <span class="s2">&quot;rig&quot;</span><span class="p">,</span> <span class="s2">&quot;ctl&quot;</span><span class="p">,</span> <span class="s2">&quot;toolkit&quot;</span><span class="p">,</span> <span class="s2">&quot;skin&quot;</span><span class="p">,</span> <span class="s2">&quot;lct&quot;</span><span class="p">]</span>
+<span class="linenos">139</span>
+<span class="linenos">140</span>
+<span class="linenos">141</span><span class="c1">###</span>
+<span class="linenos">142</span><span class="c1"># Chains for Auto Rig</span>
+<span class="linenos">143</span><span class="c1">###</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to Personal Scripts’s documentation!</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Amenrio<br/>
+  
+      &copy; Copyright 2022, Amenrio.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

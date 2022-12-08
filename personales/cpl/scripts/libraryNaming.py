@@ -25,9 +25,9 @@ def get_nice_name(name_obj):
         parts_obj = name_obj.split("_")
         return parts_obj
 
+#
 # ID Propio
-
-
+#
 proyect_id = {
     """_summary_
     """
