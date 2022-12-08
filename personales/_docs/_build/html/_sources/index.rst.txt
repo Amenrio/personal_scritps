@@ -3,6 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
 Welcome to Personal Scripts's documentation!
 ============================================
 
@@ -13,6 +14,13 @@ Welcome to Personal Scripts's documentation!
    autoRigModule
    miscModule
 
+.. exercise:: Optional title, some default otherwise
+   :option: value
+
+   This is the body
+
+   You can put *arbitrary syntax* here.
+   
 Indices and tables
 ==================
 

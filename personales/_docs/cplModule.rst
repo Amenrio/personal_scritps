@@ -1,5 +1,5 @@
 Check Pipeline Tool
------------
+-------------------
 *Multiple Maya Tools developed by Amenrio*
 
 -----------

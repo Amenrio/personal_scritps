@@ -29,11 +29,18 @@ sys.path.insert(0, os.path.abspath('..'))
 
 sys.path.append("fake_modules")
 sys.path.append('_docs/fake_modules')
-sys.path.append('../..')
 
-# -- Options for HTML output -------------------------------------------------
+
+# -- Options for output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_book_theme'
-
 html_static_path = ['_static']
+html_css_files = ['custom.css']
+
+
+#Theme Options ----------------------------------------------------------
+#https://sphinx-book-theme.readthedocs.io/en/latest/customize/
+html_theme_options = {
+    'toc_title': 'Amenrio'
+}
