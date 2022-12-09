@@ -1,6 +1,5 @@
 """
-SCRIPT para crear PLANTILLA para un attr_l_brazo
-MRA_plantillaSquashStretchLimbs.py
+Module that given a system of names, creates both arms and adds IK controls and custom attributes instanced in shapes
 
 """
 
@@ -15,8 +14,21 @@ cik_l_chain = ["cik_l_upperArm","None","cik_l_hand"]
 jnt_r_chain = ["jnt_r_upperArm","jnt_r_lowerArm","jnt_r_hand"]
 cik_r_chain = ["cik_r_upperArm","None","cik_r_hand"]
 
+def create_jnt_chain():
+    """TODO
+        Creates jnt bones for both arms
+    """
+    pass
+def create_cik_chain():
+    """TODO
+        Creates IK control bones for both arms
+    """
+    pass
+
 def create_nurbs_shapes():
-##Creates All Atributes
+    """
+
+    """
     for n in node_name:
         limb = n.split("_")
 

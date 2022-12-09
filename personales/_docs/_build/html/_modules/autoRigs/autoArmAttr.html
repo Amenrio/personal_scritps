@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -184,8 +185,7 @@ title="Fullscreen mode"
                 
   <h1>Source code for autoRigs.autoArmAttr</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">SCRIPT para crear PLANTILLA para un attr_l_brazo</span>
-<span class="sd">MRA_plantillaSquashStretchLimbs.py</span>
+<span class="sd">Module that given a system of names, creates both arms and adds IK controls and custom attributes instanced in shapes</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 
@@ -200,8 +200,21 @@ title="Fullscreen mode"
 <span class="n">jnt_r_chain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;jnt_r_upperArm&quot;</span><span class="p">,</span><span class="s2">&quot;jnt_r_lowerArm&quot;</span><span class="p">,</span><span class="s2">&quot;jnt_r_hand&quot;</span><span class="p">]</span>
 <span class="n">cik_r_chain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cik_r_upperArm&quot;</span><span class="p">,</span><span class="s2">&quot;None&quot;</span><span class="p">,</span><span class="s2">&quot;cik_r_hand&quot;</span><span class="p">]</span>
 
+<div class="viewcode-block" id="create_jnt_chain"><a class="viewcode-back" href="../../autoRigModule.html#autoRigs.autoArmAttr.create_jnt_chain">[docs]</a><span class="k">def</span> <span class="nf">create_jnt_chain</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;TODO</span>
+<span class="sd">        Creates jnt bones for both arms</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+<div class="viewcode-block" id="create_cik_chain"><a class="viewcode-back" href="../../autoRigModule.html#autoRigs.autoArmAttr.create_cik_chain">[docs]</a><span class="k">def</span> <span class="nf">create_cik_chain</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;TODO</span>
+<span class="sd">        Creates IK control bones for both arms</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
 <div class="viewcode-block" id="create_nurbs_shapes"><a class="viewcode-back" href="../../autoRigModule.html#autoRigs.autoArmAttr.create_nurbs_shapes">[docs]</a><span class="k">def</span> <span class="nf">create_nurbs_shapes</span><span class="p">():</span>
-<span class="c1">##Creates All Atributes</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">node_name</span><span class="p">:</span>
         <span class="n">limb</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
 

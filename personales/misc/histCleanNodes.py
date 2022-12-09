@@ -1,4 +1,4 @@
-"""Custom Module to hide nonimportant nodes from ChannelBox history
+"""Custom Module to hide trhough .isHstoricallyInteresting attribute fromn nodes in the ChannelBox
 """
 
 import maya.cmds as cmds

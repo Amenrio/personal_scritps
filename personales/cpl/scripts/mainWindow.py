@@ -9,7 +9,9 @@ import maya.cmds as cmds
 
 
 def check_pipeline():
-    """Creates main window of the script
+    """Creates main window of the script using maya.cmds \n
+    **Button 1** to execute naming checker \n
+    **Button 2** to execute orient checker
     """
     # print messageErrorRigPipe
     window_name = "MRA_checkPipeline"

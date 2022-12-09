@@ -20,7 +20,7 @@ Welcome to Personal Scripts's documentation!
    This is the body
 
    You can put *arbitrary syntax* here.
-   
+
 Indices and tables
 ==================
 

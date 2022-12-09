@@ -4,7 +4,7 @@ This Module has the functions to check if nodes in maya correctly use a naming c
 """
 
 import maya.cmds as cmds
-from . import libraryNaming as lib  # Libreria de variables
+from . import libraryNaming as lib
 
 
 def get_nice_name(name_obj):
